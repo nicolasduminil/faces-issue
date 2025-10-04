@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="jakarta.faces.html">
+  <h:head>
+    <h:outputStylesheet name="styles.css" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  </h:head>
+
+  <h:body>
+    <h2>JSF Converter demo</h2>
+    <h3>Enter an enumerated</h3>
+    <br/>
+    <h:form id="sampleform">
+      <h:messages id="version" errorStyle="color: red" infoStyle="color: green"/>
+      <p:selectOneMenu id="selectOne"
+                       value="#{myBean.myEnum}"
+                       converter="myConverter"
+                       styleClass="form-input"
+                       required="true"
+                       requiredMessage="Please select a value">
+        <f:selectItem itemLabel="Choose a value..." itemValue="" noSelectionOption="true"/>
+        <f:selectItem itemLabel="One" itemValue="ONE"/>
+        <f:selectItem itemLabel="Two" itemValue="TWO"/>
+        <f:selectItem itemLabel="Three" itemValue="THREE"/>
+        <f:selectItem itemLabel="Four" itemValue="FOUR"/>
+      </p:selectOneMenu>
+      <h:commandButton value="Submit" action="#{myBean.show()}"/>
+    </h:form>
+  </h:body>
+</html>
