@@ -23,7 +23,7 @@ public class MyBean
 
   public void show()
   {
-    FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Saved", null);
+    FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Saved %s".formatted(myEnum), null);
     FacesContext.getCurrentInstance().addMessage(null, facesMsg);
   }
 }
